@@ -8,29 +8,24 @@ $(document).ready(function () {
 
         // submit form data to api
 
-
         var xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", function () {
+            console.log(window.URL);
             if (this.readyState === 4) {
                 try {
                     result = $.parseJSON(this.responseText)
 
                     if (result['status'] === 200) {
-                        setCookie("jwt", result['jwt'], 1);
-                        showHomePage();
-                        $('#1234').html("<div class='alert alert-success'>Successful login.</div>");
-
-                    } else if (result['status'] === 122) {
-                        $('#1234').html("<div class='alert alert-danger'>Plice Validate your Account.</div>");
-                    } else {
-
-                        $('#1234').html("<div class='alert alert-danger'>Plice check your username or password.</div>");
+                        $('#1234').html("<div class='alert alert-success'>تم التسجيل بنجاح.</div>");
+                    } else{
+                        dlpError = result['error'];
+                        $('#1234').html("<div class='alert alert-danger'> لقد تم التسجيل مسبقآ بأستخدام."+ dlpError +"</div>");
                     }
                 }
                 catch (err) {
-                    $('#1234').html("<div class='alert alert-danger'>Unable to login, plice contact the admin.</div>");
+                    $('#1234').html("<div class='alert alert-danger'> من فضلك حاول فى وقت لاحق."+ err +"</div>");
                 }
 
 
@@ -41,7 +36,7 @@ $(document).ready(function () {
 
         });
 
-        xhr.open("POST", "https://idea-maker.herokuapp.com/api/index.php/login");
+        xhr.open("POST", window.location + 'register.php');
         xhr.setRequestHeader("content-type", "application/json");
 
         xhr.setRequestHeader("cache-control", "no-cache");

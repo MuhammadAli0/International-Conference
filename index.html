@@ -116,7 +116,7 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#organizers">
-                المنظيمين
+                اللجنه التنظيميه
               </a>
             </li>
 
@@ -154,7 +154,7 @@
         </li>
 
         <li>
-          <a class="page-scroll" href="#organizers">المنظمين</a>
+          <a class="page-scroll" href="#organizers">اللجنة التنظيميه</a>
         </li>
         <li>
           <a class="page-scroll" href="#sponsors">الرعاه</a>
@@ -254,7 +254,7 @@
   <!-- Header Area wrapper End -->
 
   <!-- Countdown Section Start -->
-  <!-- <section id="countdown" class="countdown-timer section-padding">
+  <section id="countdown" class="countdown-timer section-padding">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -270,7 +270,7 @@
         </div>
       </div>
     </div>
-  </section> -->
+  </section> 
   <!-- Countdown Section End -->
 
   <!-- About Section Start -->
@@ -325,7 +325,7 @@
       <div class="row">
         <div class="col-12">
           <div class="section-title-header text-center">
-            <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s"># المنظمين #</h1>
+            <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s"># اللجنة التنظيميه للمؤتمر #</h1>
           </div>
         </div>
       </div>
@@ -430,7 +430,7 @@
         <!-- Team Item Ends -->
 
         <!-- Team Item Starts -->
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <!-- <div class="col-sm-3 col-md-3 col-lg-3">
           <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
             <div class="container">
               <h5>Dr.Frank ‫‪Gunzer‬‬</h5>
@@ -439,11 +439,11 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- Team Item Ends -->
 
         <!-- Team Item Starts -->
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <!-- <div class="col-sm-3 col-md-3 col-lg-3">
           <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
             <div class="container">
               <h5>Dr.Alaa A.Hefnawy</h5>
@@ -452,7 +452,7 @@
 
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- Team Item Ends -->
 
         <!-- Team Item Starts -->
@@ -778,26 +778,27 @@
     aria-hidden="true">
 
     <div class="modal-dialog" role="document">
-      <div id="1234" class="modal-content">
+      <div  class="modal-content">
         <div class="modal-header text-center">
           <h4 class="modal-title w-100 font-weight-bold">التسجيل</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form id='Register' dir="rtl">
+        <div id="1234" dir="rtl" style="text-align: right;">
+        <form id='Register' >
           <div class="modal-body mx-3">
             <div class="md-form mb-5">
               <i class="fas fa-user prefix grey-text"></i>
-              <input type="text" id="name" class="form-control validate" placeholder="الاسم" required="">
+              <input type="text" id="name" name="name" class="form-control validate" placeholder="الاسم" required="">
             </div>
             <div class="md-form mb-4">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="email" id="email" class="form-control validate" placeholder="البريد الالكترونى" required="">
+              <input type="email" id="email" name="email" class="form-control validate" placeholder="البريد الالكترونى" required="">
             </div>
             <div class="md-form mb-4">
               <i class="fas fa-envelope prefix grey-text"></i>
-              <input type="phone" id="phone" class="form-control validate" placeholder="رقم الهاتف " required="">
+              <input type="phone" id="phone" name="phone" class="form-control validate" placeholder="رقم الهاتف " required="">
             </div>
 
             <select id="type" name="type" class="form-control validate" required="">
@@ -814,6 +815,7 @@
           </div>
       </div>
       </form>
+    </div>
     </div>
   </div>
 
