@@ -12,7 +12,7 @@ $(document).ready(function () {
         xhr.withCredentials = true;
 
         xhr.addEventListener("readystatechange", function () {
-            console.log(window.URL);
+            console.log(data);
             if (this.readyState === 4) {
                 try {
                     result = $.parseJSON(this.responseText)
@@ -36,7 +36,7 @@ $(document).ready(function () {
 
         });
 
-        xhr.open("POST", window.location + '/register.php');
+        xhr.open("POST", window.location + 'register.php');
         xhr.setRequestHeader("content-type", "application/json");
 
         xhr.setRequestHeader("cache-control", "no-cache");

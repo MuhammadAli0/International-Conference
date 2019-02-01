@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -12,34 +12,6 @@ $config = ['settings' => [
 ]];
 $app = new \Slim\App($config);
 date_default_timezone_set('UTC');
-
-
-$app->post('/', function($request, $response){
-    $data=$request->getParsedBody();
-    $mail = new mailer();
-    try{
-        $mail->load();
-        $mail->sendMail(json_encode($data));
-        $response->write(json_encode(array(
-            "status" => 200,
-            "message" => "Success"
-        )));
-    }catch (Exception $e) {
-        $response->write(json_encode(array(
-            "status" => 500,
-            "error" => $e
-        )));
-    }
-    
-
-});
-$app->run();
-
-
- 
-
-
-
 
 class mailer
 {
@@ -88,8 +60,9 @@ class mailer
               <!-- Required meta tags 
               </head>
               <body>
-              <p><B> `+ $body +` </B></p>
+              <p><B> `. $body .` </B></p>
               </body></html>` ;
+
             $this->mail->AltBody = $this->footer;
 
             $this->mail->send();
@@ -98,6 +71,35 @@ class mailer
         }
     }
 }
+
+
+$app->post('/', function($request, $response){
+    $data=$request->getParsedBody();
+    $mail = new mailer();
+    try{
+        $mail->load();
+        $mail->sendMail(json_encode($data));
+        $response->write(json_encode(array(
+            "status" => 200,
+            "message" => "Success"
+        )));
+    }catch (Exception $e) {
+        $response->write(json_encode(array(
+            "status" => 500,
+            "error" => $e
+        )));
+    }
+    
+});
+$app->run();
+
+
+ 
+
+
+
+
+
 
 ?>
 
