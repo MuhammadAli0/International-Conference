@@ -78,7 +78,7 @@ $app->post('/', function($request, $response){
     $mail = new mailer();
     try{
         $mail->load();
-        $mail->sendMail(json_encode($data));
+        $mail->sendMail(json_encode($data, JSON_UNESCAPED_UNICODE));
         $response->write(json_encode(array(
             "status" => 200,
             "message" => "Success"
