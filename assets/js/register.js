@@ -36,7 +36,7 @@ $(document).ready(function () {
 
         });
 
-        xhr.open("POST", window.location + 'register.php');
+        xhr.open("POST", window.location + '/register.php');
         xhr.setRequestHeader("content-type", "application/json");
 
         xhr.setRequestHeader("cache-control", "no-cache");

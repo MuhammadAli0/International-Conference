@@ -82,7 +82,14 @@ class mailer
             $this->mail->isHTML(true);
 
             $this->mail->Subject = "SomeOne Registed";
-            $this->mail->Body = $body;
+            $this->mail->Body =  `<!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <!-- Required meta tags 
+              </head>
+              <body>
+              <p><B> `+ $body +` </B></p>
+              </body></html>` ;
             $this->mail->AltBody = $this->footer;
 
             $this->mail->send();
