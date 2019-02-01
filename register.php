@@ -78,7 +78,9 @@ $app->post('/', function($request, $response){
     $mail = new mailer();
     try{
         $mail->load();
-        $mail->sendMail(json_encode($data, JSON_UNESCAPED_UNICODE));
+        $data['name'] = iconv('windows-1256', 'utf-8', ($data['name']));
+
+        $mail->sendMail(json_encode($data));
         $response->write(json_encode(array(
             "status" => 200,
             "message" => "Success"
