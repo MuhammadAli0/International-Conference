@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -47,18 +47,19 @@ class mailer
             $this->mail->From = $this->EmailAddress;
             $this->mail->FromName = "Mohammed Ali";
 
-            $this->mail->addAddress("mohammedali@mail.uk", "  ");
+            $this->mail->addAddress("safaasms@hotmail.com", "  ");
 
             $this->mail->WordWrap = 50;
 
             $this->mail->isHTML(true);
+            $this->mail->CharSet = 'UTF-8';
 
             $this->mail->Subject = "SomeOne Registed";
             $this->mail->Body =  `<!DOCTYPE html>
             <html lang="en">
             <head>
-              <!-- Required meta tags 
-              </head>
+            <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+            "Content-Type: text/plain; charset=UTF-8\r\n"               </head>
               <body>
               <p><B> `. $body .` </B></p>
               </body></html>` ;
@@ -74,14 +75,28 @@ class mailer
 
 
 $app->post('/', function($request, $response){
+    $filterHeaderValue = function ($value) {
+        return str_replace(array("\r", "\n"), '', trim($value));
+    };
+    
     $data=$request->getParsedBody();
     $mail = new mailer();
     try{
         $mail->load();
-        $rData = '<br>';
+        $rData = '<br> <table dir="rtl" class="table table-light" style="border-collapse: collapse; color: #0c3950;text-align: center;">
+        <tr>
+                  <th>الاسم</th>
+                  <th>البريد الالكترونى</th>
+                  <td>الهاتف</td>
+                  <td>العضويه</td>
+                  <td>الملاحظات</td>
+                </tr>
+                <tbody> <tr>';
         foreach($data as &$value){
-            $rData = $rData . $value . '<br>';
+            $rData = $rData . '<th>' . $filterHeaderValue($value) . '</th>';
+
         }
+        $rData = $rData . '</tr></tbody>';
         $mail->sendMail($rData);
         $response->write(json_encode(array(
             "status" => 200,

@@ -899,13 +899,22 @@
             </div>
 
             <select id="type" name="type" class="form-control validate" required="">
+                <option value="" disabled selected>
+                    نوع العضويه
+                    </option>
               <option value="golden">ذهبى</option>
               <option value="silver">فضى</option>
               <option value="pronze">برونزي</option>
               <option value="normal">عادى</option>
               <option value="company">شركه</option>
             </select>
+
+            <div class="md-form mb-4">
+              <i class="fas fa-envelope prefix grey-text"></i>
+              <input type="text" id="note" name="note" class="form-control validate" placeholder="يمكنك اضافه بعض الملاحظات هنا كأسم ورشه العمل , الراعى ..الخ " required="">
+            </div>
           </div>
+
 
           <div class="modal-footer d-flex justify-content-center">
             <button type="submit" class="btn btn-indigo  btn-common">ارسل <i class="fas fa-paper-plane-o ml-1"></i></button>
