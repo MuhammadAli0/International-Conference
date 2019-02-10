@@ -151,6 +151,14 @@
   .footer-area h3 {
     margin-top: 30px;
   }
+  .navbar-brand img{
+    width: 84px;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .slicknav_menu{
+    display: none;
+  }
 }
 
 /* mobile or only mobile */
@@ -252,7 +260,14 @@
     border-bottom: 1px solid #ddd;
   }
 }
-
+@media (min-width: 481px) and (max-width: 767px) {
+  .navbar-brand img {
+        width: 84px;
+    height: auto;
+    padding-top: 0px;
+    margin-top: -24px;
+}
+}
 @media (min-width: 320px) and (max-width: 480px) {
   #main-slide .carousel-item .carousel-caption .heading {
     letter-spacing: 0;
@@ -269,6 +284,9 @@
   #about .title-sub {
     font-size: 24px;
   }
+  #countdown{
+    padding-top: 60px;
+  }
   .contact-map .container-form {
     width: 350px;
   }
@@ -279,4 +297,22 @@
     padding: 5px 7px;
     font-size: 13px;
   }
+  .navbar-brand{
+        width: 56px;
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+.traah{
+  margin-left: 0px;
+}
+.table-light{
+  margin-left: -14px;
+}
+
+ .berorschedule-tab{
+  margin: 0px 15% 0px 0%;
+  margin: 0px;
+ }
 }
