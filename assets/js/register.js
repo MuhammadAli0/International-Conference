@@ -20,13 +20,13 @@ $(document).ready(function () {
 
                     if (result['status'] === 200) {
                         $('#1234').html("<div class='alert alert-success'>تم التسجيل بنجاح.</div>");
-                    } else{
+                    } else {
                         dlpError = result['error'];
-                        $('#1234').html("<div class='alert alert-danger'> لقد تم التسجيل مسبقآ بأستخدام."+ dlpError +"</div>");
+                        $('#1234').html("<div class='alert alert-danger'> لقد تم التسجيل مسبقآ بأستخدام." + dlpError + "</div>");
                     }
                 }
                 catch (err) {
-                    $('#1234').html("<div class='alert alert-danger'> من فضلك حاول فى وقت لاحق."+ err +"</div>");
+                    $('#1234').html("<div class='alert alert-danger'> من فضلك حاول فى وقت لاحق." + err + "</div>");
                 }
 
 
@@ -67,21 +67,21 @@ $(document).ready(function () {
         return o;
     };
 
-    function ValidateForm(){
+    function ValidateForm() {
         var type = document.getElementById("type").value;
-        if(type === 'ذهبى'){
+        if (type === 'ذهبى') {
             document.getElementById("cost").value = 1500;
-        } else if (type === 'شركه'){
+        } else if (type === 'شركه') {
             document.getElementById("cost").value = 1200;
-        } else if (type === 'فضي'){
+        } else if (type === "فضي") {
             document.getElementById("cost").value = 1000;
-        } else if (type === 'برونزي'){
+        } else if (type === 'برونزي') {
             document.getElementById("cost").value = 800;
-        } else if (type === 'عادى'){
+        } else if (type === 'عادى') {
             document.getElementById("cost").value = 500;
-        } else{
+        } else {
             document.getElementById("cost").value = "Unkown";
-        } 
+        }
     }
 
 
