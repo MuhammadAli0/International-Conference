@@ -48,7 +48,7 @@ class mailer
             $this->mail->From = $this->EmailAddress;
             $this->mail->FromName = "Mohammed Ali";
 
-            $this->mail->addAddress("safaasms@hotmail.com", "D.r Safaa Sayed");
+            $this->mail->addAddress("mohammedali@technologist.com", "D.r Safaa Sayed");
 
             $this->mail->WordWrap = 50;
 

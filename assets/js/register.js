@@ -3,6 +3,7 @@ $(document).ready(function () {
     $(document).on('submit', '#Register', function () {
 
         // get form data
+        ValidateForm();
         var _form = $(this);
         var data = JSON.stringify(_form.serializeObject());
 
@@ -65,6 +66,23 @@ $(document).ready(function () {
         });
         return o;
     };
+
+    function ValidateForm(){
+        var type = document.getElementById("type").value;
+        if(type === 'ذهبى'){
+            document.getElementById("cost").value = 1500;
+        } else if (type === 'شركه'){
+            document.getElementById("cost").value = 1200;
+        } else if (type === 'فضي'){
+            document.getElementById("cost").value = 1000;
+        } else if (type === 'برونزي'){
+            document.getElementById("cost").value = 800;
+        } else if (type === 'عادى'){
+            document.getElementById("cost").value = 500;
+        } else{
+            document.getElementById("cost").value = "Unkown";
+        } 
+    }
 
 
 });
