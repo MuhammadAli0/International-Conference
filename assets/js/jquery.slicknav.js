@@ -3,6 +3,7 @@
  * (c) 2015 Josh Cope
  * licensed under MIT
  */
+var items = '';
 ;(function ($, document, window) {
     var
     // default settings object.
@@ -16,7 +17,7 @@
             openedSymbol: '&#9660;',
             prependTo: 'body',
             parentTag: 'a',
-            closeOnClick: false,
+            closeOnClick: true,
             allowParentLinks: false,
             nestedParentLinks: true,
             showChildren: false,
@@ -88,18 +89,18 @@
         }
 
         if (settings.parentTag == 'a') {
-            settings.parentTag = 'a href="#"';
+            settings.parentTag = 'a  href="#"';
         }
 
         // create menu bar
         $this.mobileNav.attr('class', prefix + '_nav');
-        menuBar = $('<div class="' + prefix + '_menu"></div>');
+        menuBar = $('<div   class="' + prefix + '_menu"></div>');
 		if (settings.brand !== '') {
-			var brand = $('<div class="' + prefix + '_brand">'+settings.brand+'</div>');
+			var brand = $('<div  class="' + prefix + '_brand">'+settings.brand+'</div>');
 			$(menuBar).append(brand);
 		}
         $this.btn = $(
-            ['<' + settings.parentTag + ' aria-haspopup="true" tabindex="0" class="' + prefix + '_btn ' + prefix + '_collapsed">',
+            ['<' + settings.parentTag + ' aria-haspopup="true" tabindex="0" class="' + prefix + '_btn ' + prefix + '_collapsed" >',
                 '<span class="' + prefix + '_menutxt">' + settings.label + '</span>',
                 '<span class="' + iconClass + '">',
                     '<span class="' + prefix + '_icon-bar"></span>',
@@ -115,6 +116,7 @@
 
         // iterate over structure adding additional structure
         var items = $this.mobileNav.find('li');
+        window.items = items
         $(items).each(function () {
             var item = $(this),
                 data = {};

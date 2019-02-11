@@ -830,6 +830,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .slicknav_menu .slicknav_icon-bar {
+
   background: #215172;
 }
 
@@ -881,6 +882,7 @@ a.back-to-top:hover, a.back-to-top:focus {
 }
 
 .slicknav_menu {
+    
   display: none;
 }
 
@@ -900,6 +902,7 @@ a.back-to-top:hover, a.back-to-top:focus {
     display: none;
   }
   .slicknav_menu {
+    margin-left: 211px;
     display: block;
   }
   .slicknav_nav .active a {
